@@ -1,0 +1,194 @@
+/*主页面 兼容IE*/
+@charset "UTF-8";
+body,html{
+    height: 100%;
+}
+article,aside,blockquote,body,button,code,dd,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,input,legend,li,menu,nav,ol,p,pre,section,td,textarea,th,ul{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html{
+    overflow-scrolling: touch;/*当手指从触摸屏离开时，还会保持一定的滚动效果*/
+    margin:0 auto;/*居中*/
+    background-color: #f7e1bd;
+}
+body{
+    font-family: "Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+    line-height: 1.5;
+    font-size: .28rem;
+    color:#333;
+    -webkit-user-select: none;/*文本不能被选择*/
+    -webkit-text-size-adjust:100%;/*防止Iphone横屏时文字变大*/
+    -webkit-tap-highlight-color: transparent;/*ios 点击一个可点击元素会变透明*/
+    outline: 0;/*去除点击时的焦点虚线*/
+}
+li {
+    list-style:none;
+}
+img{
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);/*垂直居中*/
+    border:0;
+    vertical-align: middle;/*位于中部*/
+    width: 100%;
+}
+
+/*page1*/
+.page1{
+    position: relative;
+    display: -ms-flexbox;/*盒模型*/
+    display: flex;
+    -ms-flex-pack: center;/*子元素水平居中*/
+    justify-content: center;
+    -ms-flex-direction: column;/*盒模型垂直布局*/
+    flex-direction: column;
+    -ms-flex-align: center;/*子元素垂直居中*/
+    align-items: center;
+    min-height: 100%;
+    background-size: 7.5rem 1.6rem;
+    padding-bottom: 1.5rem;
+}
+
+/*重新开始和开始按钮*/
+.game-reset-btn,.game-start-btn{
+    margin:.3rem 0;
+    width:3rem;
+    color:#fff;
+    display: inline-block;
+    font-size:.46rem;
+    text-align: center;
+    line-height: .9rem;
+}
+.game-reset-btn{
+    border-radius: .45rem;
+    background-color: #c77b02;
+}
+.game-reset-btn:disabled{
+    background-color: #dcdcdc;
+}
+
+.game-start-btn{
+    height:.9rem;
+    border-radius: .45rem;
+    border:.03rem solid #fff;
+    background-color: rgba(0,0,0,.4);
+}
+/*主体部分*/
+.game-box{
+    margin-top:.3rem;
+    position: relative;
+    width:6.7rem;
+    height:6.7rem;
+}
+
+.game-pop-box{
+    text-align: center;
+    position: absolute;
+    left: 0;
+    top:0;
+    bottom: 0;
+    right:0;
+    background-size: 3.46rem 1.06rem;
+    background-color: rgba(0,0,0,.7);
+    z-index: 10;
+}
+
+.ui-center{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+.game-pop-hd{
+    display: none;
+}
+.game-pop-hd p{
+    font-size: .3rem;
+    color: #fff;
+}
+
+/*主体部分：设置九宫格部分*/
+.game-box ul{
+    display: block;
+    width:100%;
+    height:100%;
+    border:.04rem solid #fff;
+    border-top:none;
+    border-right: none;
+    position: relative;
+}
+.game-box li{
+    width:2.22rem;
+    height: 2.22rem;
+    border-top:.04rem solid #fff;
+    border-right: .04rem solid #fff;
+    position: absolute;
+}
+
+.game-box li:nth-of-type(1){
+    top:0;
+    left:0;
+}
+.game-box li:nth-of-type(2){
+    top:0;
+    left:2.22rem;
+}
+.game-box li:nth-of-type(3){
+    top:0;
+    left:4.44rem;
+}
+.game-box li:nth-of-type(4){
+    top:2.22rem;
+    left:0;
+}
+.game-box li:nth-of-type(5){
+    top:2.22rem;
+    left:2.22rem;
+}
+.game-box li:nth-of-type(6){
+    top:2.22rem;
+    left:4.44rem;
+}
+.game-box li:nth-of-type(7){
+    top:4.44rem;
+    left:0;
+}
+.game-box li:nth-of-type(8){
+    top:4.44rem;
+    left:2.22rem;
+}
+.game-box li:nth-of-type(9){
+    top:4.44rem;
+    left:4.44rem;
+}
+
+/*记时*/
+.pages, .play-time{
+    line-height: .6rem;
+    font-size: .3rem;
+}
+/*记时模块*/
+.play-time{
+    margin-top: .4rem;
+    width:1.9rem;
+    height: .6rem;
+    border-radius: .3rem;
+    background-size: .4rem .4rem;
+    background-position: .2rem .1rem;
+    background-color: #ffca7a;
+    color:#a82d00;
+    text-align: center;
+}
+.pages{
+    padding-top: .15rem;
+    color:#982505;
+}
+.pages strong{
+    text-shadow: 1px .02rem 0 #982505,1px -.02rem 0 #982505,-1px -.02rem 0 #982505,-1px .02rem 0 #982505;
+    color:#f9fd5f;/*显示边框为橙色 里面为黄色的数字*/
+}
